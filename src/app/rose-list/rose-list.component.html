@@ -1,0 +1,33 @@
+<h2>Rose List</h2>
+<div class="card">
+  <table >
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Height [cm]</th>
+      <th>Has Fragrance</th>
+      <th>Picture</th>
+      <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--Loop through the roses array and display the name, color, and hasFragrance -->
+    <tr *ngFor="let rose of roses">
+      <td>{{ rose.name }}</td>
+      <td>{{ rose.color }}</td>
+      <td>{{rose.height}}</td>
+      <td>{{ rose.hasFragrance ? 'Yes' : 'No' }}</td>
+      <td *ngIf="rose.picture; else elseBlock">
+        <img [src]="rose.picture[0]" alt="{{ rose.name }}" class="rose-image" />
+      </td>
+      <ng-template #elseBlock>
+        <td>No Picture :( </td>
+      </ng-template>
+      <!-- Link to the cat detail page -->
+      <td><a [routerLink]="['/roseDetail', rose.id]" class="details-link">View Details</a></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>

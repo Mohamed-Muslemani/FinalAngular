@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'FinalExam307-S04';
+  title = 'Final-Exam-3MAD07-S04';
 }

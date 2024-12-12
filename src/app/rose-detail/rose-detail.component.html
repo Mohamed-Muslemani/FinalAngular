@@ -1,0 +1,12 @@
+<h2>Rose Details</h2>
+<div *ngIf="rose" class="rose-card">
+  <h2>{{ rose.name }}'s Details</h2>
+  <p><strong>Color:</strong> {{ rose.color }}</p>
+  <p><strong>Height:</strong> {{ rose.height }}</p>
+  <p><strong>Has Fragrance?</strong> {{ rose.hasFragrance ? 'Yes' : 'No' }}</p>
+
+  <h3>Image Gallery</h3>
+  <div class="gallery">
+    <img *ngFor="let image of rose.picture" [src]="image" alt="Rose Image" class="gallery-image" />
+  </div>
+</div>
